@@ -5,19 +5,21 @@ import pymongo
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import calendar
+from dotenv import load_dotenv
+import os
 
 # Initialize Flask app
 app = Flask(__name__)
-
+load_dotenv()
 # Set a secure secret key for session management
-app.secret_key = 'fd8b3f7967e94c308fe15ba8490c1926c85d38e861c84c96'  # This is a secure randomly generated key
+app.secret_key = os.getenv('SECRET_KEY')# This is a secure randomly generated key
 
 # Database connection
 try:
     
     import certifi
 
-    mongo_uri = "mongodb+srv://kyabaat:kyabaat@kyabaat.c56e53e.mongodb.net/"
+    mongo_uri = os.getenv('mongo_uri')
     client = pymongo.MongoClient(
         mongo_uri,
         tls=True,
