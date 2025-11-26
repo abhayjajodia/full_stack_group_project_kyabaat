@@ -65,14 +65,12 @@ def admin_update_submit():
                 continue
             updates[key] = val
 
-    # Try to coerce price to number if included
-    if 'price' in updates:
-        try:
-            updates['price'] = float(updates['price'])
-        except Exception:
-            # leave as-is if conversion fails
-            pass
+   
 
     if db_id and updates:
-        db.foodmenu.update_one({'_id': ObjectId(db_id)}, {'$set': updates})
+        fm = FoodMenu()
+        try:
+            fm.update_item(db_id=db_id, updates=updates)
+        except Exception as e:
+            print('Error updating item in admin_update_submit:', str(e))
     return redirect(url_for('view_page'))
