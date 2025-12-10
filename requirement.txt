@@ -1,0 +1,6 @@
+Flask
+dotenv
+pymongo
+certifi
+datetime
+
