@@ -61,7 +61,7 @@ Replace the credentials with your actual MongoDB Atlas connection string. Make s
 ### ⭐ Landing Page
 - Features a modern auto-timed carousel.
 - Allows users to **Login** or **Register**.
-![alt text](tatic/images/image-1.png)
+![alt text](static/images/image-1.png)
 
 ---
 
@@ -80,7 +80,7 @@ Replace the credentials with your actual MongoDB Atlas connection string. Make s
 
 ### 🏠 Main Page
 After login, normal users access the **Main Website Page**, which includes:
-![alt text](tatic/images/image-2.png)
+![alt text](static/images/image-2.png)
 
 ### 🍽️ Food Ordering System
 - A large **Order Now** button leading to the menu page.
