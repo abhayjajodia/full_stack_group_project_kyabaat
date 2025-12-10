@@ -51,7 +51,7 @@
       <div class="menu-content">
         <h3>{{item.name}}</h3>
         <p>{{item.description}}</p>
-        <span>₹{{item.price}}</span>
+        <span>€{{item.price}}</span>
         <form method="post" action="{{ url_for('add_to_cart') }}" class="mt-2">
           <input type="hidden" name="db_id" value="{{ item.db_id }}">
           <input type="hidden" name="qty" value="1">

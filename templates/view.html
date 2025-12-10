@@ -15,7 +15,7 @@
                                 <img src="{{ item.img }}" alt="{{ item.name }}" class="img-fluid mb-3" style="height: 200px; width: 100%; object-fit: cover;" onerror="this.src='https://via.placeholder.com/400x300?text=Image+Not+Available';" />
                                 <h5 class="card-title">{{ item.name }}</h5>
                                 <p class="card-text">{{ item.description }}</p>
-                                <p class="fw-bold">{{ item.price }}</p>
+                                <p class="fw-bold">€{{ item.price }}</p>
                             </div>
                             <div class="card-footer d-flex justify-content-between">
                                 <form method="post" action="/admin/delete-item" style="display:inline;">
