@@ -1,6 +1,3 @@
-
-
-
 // Get form elements
 const form = document.getElementById('loginForm');
 const loginButton = document.getElementById('loginButton');
