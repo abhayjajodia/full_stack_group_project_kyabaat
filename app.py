@@ -1,5 +1,4 @@
 
-
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 import pymongo
 from datetime import datetime
@@ -12,11 +11,11 @@ import os
 app = Flask(__name__)
 load_dotenv()
 # Set a secure secret key for session management
-app.secret_key = os.getenv('SECRET_KEY')# This is a secure randomly generated key
+app.secret_key = os.getenv('SECRET_KEY'  )# This is a secure randomly generated key
 
 # Database connection
 try:
-    
+
     import certifi
 
     mongo_uri = os.getenv('mongo_uri')
@@ -30,7 +29,7 @@ try:
     # Test the connection
     client.admin.command('ping')
     print("✅ Connected to MongoDB successfully!")
-    
+
     db = client["kyabaat"]
 except pymongo.errors.ConnectionFailure as e:
     print("❌ Could not connect to MongoDB:", str(e))
@@ -92,7 +91,7 @@ def registerpage():
 def view_page():
     if not session.get('is_admin'):
         return redirect(url_for('login_page'))
-    
+
     fm = FoodMenu()
     resp = fm.get_menu()
     if resp[1] != 200:
@@ -113,9 +112,9 @@ def logout():
 def menu_page():
     if 'user_id' not in session:
         return redirect(url_for('login_page'))
-    
 
-    tz = ZoneInfo("Europe/Helsinki")           
+
+    tz = ZoneInfo("Europe/Helsinki")
     today = calendar.day_name[datetime.now(tz).weekday()]
     fm = FoodMenu()
     resp = fm.get_menu()
