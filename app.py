@@ -137,10 +137,30 @@ def contact_page():
         return redirect(url_for('login_page'))
     return render_template('contact_us.html')
 
+@app.route('/order_history', methods=['GET'])
+def order_history():
+    if 'user_id' not in session:
+        return redirect(url_for('login_page'))
+    
+    user_id = session.get('user_id')
+    try:
+        # Fetch all orders for this user
+        orders = list(db.orders.find({"user_id": user_id}).sort("created_at", -1))
+        # Convert ObjectId to string for template rendering
+        for order in orders:
+            order['_id'] = str(order['_id'])
+            created_at = order.get('created_at')
+            if created_at:
+                order['created_at'] = created_at.strftime('%Y-%m-%d %H:%M')
+            else:
+                order['created_at'] = 'N/A'
+    except Exception as e:
+        print(f"Error fetching orders: {str(e)}")
+        orders = []
+    
+    return render_template('order_history.html', orders=orders)
 
 
-
-# Import routes after app is created
 from user.route import *
 from foodmenu.route import *
 from foodmenu.models import FoodMenu

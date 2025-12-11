@@ -1,79 +1,198 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kyabaat</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../static/css/dashboard.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="icon" href="{{ url_for('static', filename='images/favicon.svg') }}" type="image/svg+xml" sizes="any">
-        <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.svg') }}" type="image/svg+xml">
-        <meta name="theme-color" content="#ffffff">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kyabaat</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../static/css/dashboard.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/favicon.svg') }}"
+      type="image/svg+xml"
+      sizes="any"
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/favicon.svg') }}"
+      type="image/svg+xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
 
     {% block extra_head %}{% endblock %}
-        <style>
-   
-        </style>
-</head>
-<body>
+    <style></style>
+  </head>
+  <body>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="/">Welcome, {{ session.get('user_name', 'Guest') }}</a>
-            <!-- Hamburger menu button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Navigation items -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="/dashboard">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/cart">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fork-knife" viewBox="0 0 16 16">
-  <path d="M13 .5c0-.276-.226-.506-.498-.465-1.703.257-2.94 2.012-3 8.462a.5.5 0 0 0 .498.5c.56.01 1 .13 1 1.003v5.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5zM4.25 0a.25.25 0 0 1 .25.25v5.122a.128.128 0 0 0 .256.006l.233-5.14A.25.25 0 0 1 5.24 0h.522a.25.25 0 0 1 .25.238l.233 5.14a.128.128 0 0 0 .256-.006V.25A.25.25 0 0 1 6.75 0h.29a.5.5 0 0 1 .498.458l.423 5.07a1.69 1.69 0 0 1-1.059 1.711l-.053.022a.92.92 0 0 0-.58.884L6.47 15a.971.971 0 1 1-1.942 0l.202-6.855a.92.92 0 0 0-.58-.884l-.053-.022a1.69 1.69 0 0 1-1.059-1.712L3.462.458A.5.5 0 0 1 3.96 0z"/>
-</svg>
-    <span class='badge' id='lblCartCount'>{{ session.get('cart')|length if session.get('cart') else 0 }}</span>
-                    </a></i>
-</a></li>
-                    <li class="nav-item">
-                        <button onclick="logout()" class="logout-btn ms-2">Logout</button>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="/"
+          >Welcome, {{ session.get('user_name', 'Guest') }}</a
+        >
+        <!-- Hamburger menu button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navigation items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cart">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-fork-knife"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M13 .5c0-.276-.226-.506-.498-.465-1.703.257-2.94 2.012-3 8.462a.5.5 0 0 0 .498.5c.56.01 1 .13 1 1.003v5.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5zM4.25 0a.25.25 0 0 1 .25.25v5.122a.128.128 0 0 0 .256.006l.233-5.14A.25.25 0 0 1 5.24 0h.522a.25.25 0 0 1 .25.238l.233 5.14a.128.128 0 0 0 .256-.006V.25A.25.25 0 0 1 6.75 0h.29a.5.5 0 0 1 .498.458l.423 5.07a1.69 1.69 0 0 1-1.059 1.711l-.053.022a.92.92 0 0 0-.58.884L6.47 15a.971.971 0 1 1-1.942 0l.202-6.855a.92.92 0 0 0-.58-.884l-.053-.022a1.69 1.69 0 0 1-1.059-1.712L3.462.458A.5.5 0 0 1 3.96 0z"
+                  />
+                </svg>
+                <span class="badge" id="lblCartCount"
+                  >{{ session.get('cart')|length if session.get('cart') else 0
+                  }}</span
+                >
+              </a>
+            </li>
+            <!-- Profile Dropdown -->
+            <li class="nav-item dropdown ms-3">
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                href="#"
+                id="profileDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="currentColor"
+                  class="bi bi-person-circle me-2"
+                  viewBox="0 0 16 16"
+                  style="
+                    border-radius: 50%;
+                    background-color: #ffc107;
+                    padding: 4px;
+                  "
+                >
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm3-3.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm5.5-.5a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1Zm2.5.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm1.5 1.5a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1Zm-5 0a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1Zm-5.5-.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm.5-2.5a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1Zm9-2a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1Z"
+                  />
+                </svg>
+                <span>{{ session.get('user_name', 'Guest') }}</span>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="profileDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="/order_history">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-clock-history me-2"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.018.042ZM4.696 14.059l.948-.468-.533-.94a7.047 7.047 0 0 1 3.286 3.863l.575-.899a8.022 8.022 0 0 0-3.278-4.556ZM8 12.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Z"
+                      />
+                      <path d="m8.5 4.5-2 2v2.5h2V6.5l1.5-1.5V2h-2v2.5Z" />
+                    </svg>
+                    Order History
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a
+                    class="dropdown-item text-danger"
+                    href="#"
+                    onclick="logout(); return false;"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-box-arrow-right me-2"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 1h-8A1.5 1.5 0 0 0 0 2.5v9A1.5 1.5 0 0 0 1.5 13h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2Z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708l2.147-2.146H4.5a.5.5 0 0 1 0-1h10.293L12.146 2.854a.5.5 0 0 1 .708-.708l3 3Z"
+                      />
+                    </svg>
+                    Logout
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
     <!-- Main Content -->
     <div class="content-wrapper">
-        <main class="container">
-            <!-- Content with overlay -->
-            <div class="content-overlay">
-                {% block content %}
-                {% endblock %}
-            </div>
-        </main>
+      <main class="container">
+        <!-- Content with overlay -->
+        <div class="content-overlay">{% block content %} {% endblock %}</div>
+      </main>
     </div>
 
-   <!-- Bootstrap JS Bundle (includes Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Custom logout script -->
-<script src="{{ url_for('static', filename='js/logout.js') }}"></script>
-<!-- Initialize Bootstrap tooltips (run once per page) -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    tooltipTriggerList.forEach(function (el) {
-        try {
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom logout script -->
+    <script src="{{ url_for('static', filename='js/logout.js') }}"></script>
+    <!-- Initialize Bootstrap tooltips (run once per page) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var tooltipTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        );
+        tooltipTriggerList.forEach(function (el) {
+          try {
             new bootstrap.Tooltip(el);
-        } catch (e) {
+          } catch (e) {
             // If tooltip initialization fails, log and continue
-            console.warn('Tooltip init failed for element', el, e);
-        }
-    });
-});
-</script>
-</body>
+            console.warn("Tooltip init failed for element", el, e);
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
