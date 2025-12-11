@@ -129,7 +129,7 @@ We created a fully custom **Kyabaat Logo**, exploring:
 - Modern, minimal, and expressive visual combinations  
 
 To learn more about the logo, its design decisions, color themes, and usage guidelines, refer to:  
-📄 **kyabaat_logo_documentation.pdf**
+📄 [**kyabaat_logo_documentation.pdf**](https://github.com/abhayjajodia/full_stack_group_project_kyabaat/blob/main/Kyabaat_Logo_Documentation.pdf)
 
 ![alt text](static/images/image.png)
 
