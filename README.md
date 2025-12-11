@@ -1,7 +1,7 @@
 # Kyabaat - Local Setup (Beginner Friendly)
 
 # Here is the full demo of our website
-[Kyabaat](https://kyabaat.onrender.com/)
+🌐 [Kyabaat](https://kyabaat.onrender.com/)
 
 This is a small Flask app that uses MongoDB (PyMongo).
 
@@ -94,6 +94,7 @@ After login, normal users access the **Main Website Page**, which includes:
   - Add items to cart  
   - View their cart through the **Navbar Cart Icon**  
   - Remove or update items in the cart  
+  - And check their order history in **Profile Page**
 
 ### 🛒 Checkout & Payment
 - Users proceed to **Checkout**
@@ -156,4 +157,4 @@ To learn more about the logo, its design decisions, color themes, and usage guid
 
 
 ## Please provides us your reviews or Feedback for our website
-📄  [Feedback Form](https://forms.gle/RnkkazNPhyC73pob7)
+👍😐👎 [Feedback Form](https://forms.gle/RnkkazNPhyC73pob7)
