@@ -1,6 +1,17 @@
-Flask
-dotenv
-pymongo
-certifi
-datetime
 
+
+pytz, 
+zope.interface, 
+python-dotenv, 
+markupsafe, 
+itsdangerous, 
+dnspython, 
+click, 
+certifi, 
+blinker, 
+werkzeug, 
+pymongo, 
+jinja2, 
+dotenv, 
+datetime, 
+Flask
