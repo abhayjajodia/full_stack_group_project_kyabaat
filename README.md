@@ -158,3 +158,29 @@ To learn more about the logo, its design decisions, color themes, and usage guid
 
 ## Please provides us your reviews or Feedback for our website
 👍😐👎 [Feedback Form](https://forms.gle/RnkkazNPhyC73pob7)
+
+## Dietary Restrictions Feature
+
+Customers can specify their dietary preferences during checkout. This helps ensure orders are prepared according to individual needs and restrictions.
+
+### Available Dietary Options
+- **Vegan** - No animal products
+- **Vegetarian** - No meat
+- **Gluten-Free** - Safe for celiac disease or gluten sensitivity
+- **Dairy-Free** - No milk or dairy products
+- **Nut-Free** - No nuts (for nut allergies)
+- **Spicy-Free** - Mild/non-spicy preparation
+
+### How Customers Use This Feature
+1. Add items to cart and proceed to **Checkout**
+2. In the checkout page, select dietary preferences for each item (optional)
+3. Check relevant dietary restriction boxes for each food item
+4. Complete billing information and place order
+5. Dietary preferences are saved with the order in **Order History**
+
+### Where Dietary Information is Stored
+- **Order History** - Customers can view their dietary selections in past orders
+- **Database** - Each order item stores the customer's selected dietary restrictions
+
+
+```

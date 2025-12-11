@@ -67,8 +67,6 @@ def admin_update_submit():
                 continue
             updates[key] = val
 
-   
-
     if db_id and updates:
         fm = FoodMenu()
         try:
@@ -214,12 +212,17 @@ def process_checkout():
         qty = int(entry.get('qty', 0) or 0)
         subtotal = price * qty
         total += subtotal
+        
+        # Get dietary restrictions selected for this item by customer
+        dietary_restrictions = request.form.getlist(f'dietary_{db_id}')
+        
         items.append({
             'db_id': db_id,
             'name': entry.get('name'),
             'price': price,
             'qty': qty,
-            'subtotal': subtotal
+            'subtotal': subtotal,
+            'dietary_restrictions': dietary_restrictions
         })
 
     order = {

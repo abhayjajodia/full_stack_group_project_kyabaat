@@ -38,13 +38,20 @@
                             <h6 class="mb-3 text-secondary">Items Ordered</h6>
                             <div class="order-items mb-4" style="max-height: 200px; overflow-y: auto;">
                                 {% for item in order['items'] %}
-                                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                                    <div class="d-flex justify-content-between align-items-start mb-2 pb-2 border-bottom">
                                         <div>
-                                            <p class="mb-0 fw-500">{{ item.name }}</p>
-                                            <small class="text-muted">Qty: {{ item.qty }}</small>
+                                            <p class="mb-0 fw-500">{{ item['name'] }}</p>
+                                            {% if item['dietary_restrictions'] and item['dietary_restrictions']|length > 0 %}
+                                              <div class="dietary-badges small mt-1">
+                                                {% for restriction in item['dietary_restrictions'] %}
+                                                  <span class="badge bg-info">{{ restriction|capitalize }}</span>
+                                                {% endfor %}
+                                              </div>
+                                            {% endif %}
+                                            <small class="text-muted">Qty: {{ item['qty'] }}</small>
                                         </div>
                                         <div class="text-end">
-                                            <p class="mb-0">₹{{ "%.2f"|format(item.subtotal) }}</p>
+                                            <p class="mb-0">₹{{ "%.2f"|format(item['subtotal']) }}</p>
                                         </div>
                                     </div>
                                 {% endfor %}
