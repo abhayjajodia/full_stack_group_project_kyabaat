@@ -225,10 +225,6 @@ Screenshot of all Lighthouse reports are avavilable by clicking the link [**Ligh
 
 ## Please provides us your reviews or Feedback for our website
 👍😐👎 [**Feedback Form**](https://forms.gle/RnkkazNPhyC73pob7)
-
-
-
-
 ```
 
 
