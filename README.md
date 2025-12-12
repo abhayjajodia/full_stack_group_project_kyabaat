@@ -6,7 +6,7 @@
 🌐 [**Kyabaat**](https://kyabaat.onrender.com/)
 
 Kyabaat is an ordering app that brings a fresh, Indian touch to the world of digital
-convenience. The name ‘Kyabaat’ () is a Hindi expression of delight, often used to
+convenience. The name ‘Kyabaat’ is a Hindi expression of delight, often used to
 appreciate something wonderful or impressive. The brand reflects the spirit of
 simplicity, joy, and satisfaction that comes with easy ordering and reliable service.
 
