@@ -1,9 +1,18 @@
 # Kyabaat - Local Setup (Beginner Friendly)
 
 # Here is the full demo of our website
-🌐 [Kyabaat](https://kyabaat.onrender.com/)
+🌐 [**Kyabaat**](https://kyabaat.onrender.com/)
 
 This is a small Flask app that uses MongoDB (PyMongo).
+
+## 👨🏻‍👩🏻‍👦🏻‍👦🏻 Team Members
+
+- Abhay Jajodia
+- Nirmala Adhikari
+- Misra Parvin
+- Paras Soni
+- Pabisa Sapkota
+
 
 ## Quick start (macOS / Linux):
 
@@ -92,7 +101,7 @@ After login, normal users access the **Main Website Page**, which includes:
 - Users can:
   - Browse items  
   - Add items to cart  
-  - View their cart through the **Navbar Cart Icon**  
+  - View their cart through the **Navbar Cart Icon** as 🍴
   - Remove or update items in the cart  
   - And check their order history in **Profile Page**
 
@@ -136,7 +145,7 @@ Logging in with admin credentials redirects the user to the **Admin Channel**.
 Admins can:
 - **Add new food items**
 - View all items under the **View** tab
-- **Edit** specific items
+- **Edit** specific items clicking **Update Button**
 - **Delete** food items from the menu
 
 This provides full CRUD control over the website’s menu system.
@@ -155,6 +164,30 @@ To learn more about the logo, its design decisions, color themes, and usage guid
 📄 [**kyabaat_logo_documentation.pdf**](https://github.com/abhayjajodia/full_stack_group_project_kyabaat/blob/main/Kyabaat_Logo_Documentation.pdf)
 
 ![alt text](static/images/image.png)
+
+---
+
+## 🗼 Accessibility & Best Practices (Lighthouse)
+
+Lighthouse accessibility and best practice scores for all main pages (as of Dec 2025):
+
+|Page          | Accessibility | Best Practices |
+|--------------| :-----------: | :------------: |
+|Landing       |     16/17     |        5/5     |
+|Login         |     16/17     |        5/5     |
+|Register      |     11/12     |        5/5     |
+|Home          |     17/18     |        5/5     |
+|About Us      |     18/19     |        5/5     |
+|Contact Us    |     15/18     |        5/5     |
+|Menu          |     18/18     |        5/5     |
+|Cart          |     19/21     |        5/5     |
+|Check Out     |     17/20     |        5/5     |
+|Order         |     14/16     |        5/5     |
+|Admin Add     |     17/17     |        5/5     |
+|Admin View    |     16/17     |        5/5     |
+|Admin Update  |     16/17     |        5/5     |
+
+Screenshot of all Lighthouse reports are avavilable by clicking the link [**Lighthouse screenshot**](https://github.com/abhayjajodia/full_stack_group_project_kyabaat/blob/main/lighthouse_documentation.pdf)
 
 ---
 
@@ -180,7 +213,7 @@ To learn more about the logo, its design decisions, color themes, and usage guid
 
 
 ## Please provides us your reviews or Feedback for our website
-👍😐👎 [Feedback Form](https://forms.gle/RnkkazNPhyC73pob7)
+👍😐👎 [**Feedback Form**](https://forms.gle/RnkkazNPhyC73pob7)
 
 
 
