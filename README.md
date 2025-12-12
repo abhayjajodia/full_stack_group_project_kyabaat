@@ -15,6 +15,10 @@ This is a small Flask app that uses MongoDB (PyMongo).
 - Paras Soni
 - Pabisa Sapkota
 
+## Our Vision
+
+Our vision is to become the trusted choice for food lovers seeking exceptional culinary experiences without leaving home. We aspire to blend gourmet-quality meals with the comfort and convenience of modern living — bringing fresh, chef-crafted dishes straight to your door.
+
 
 ## Quick start (macOS / Linux):
 
@@ -100,6 +104,8 @@ After login, normal users access the **Main Website Page**, which includes:
 - A large **Order Now** button leading to the menu page.
 - Displays regular menu items.
 - **Special Day Meals** are showcased at the top.
+![alt text](image-1.png)
+
 - Users can:
   - Browse items  
   - Add items to cart  
@@ -107,6 +113,7 @@ After login, normal users access the **Main Website Page**, which includes:
   - Remove or update items in the cart  
   - And check their order history in **Profile Page**
 
+![alt text](image-2.png)
 ### 🛒 Checkout & Payment
 - Users proceed to **Checkout**
 - Choose a **Payment Option**
@@ -123,6 +130,8 @@ Customers can specify their dietary preferences during checkout. This helps ensu
 - **Dairy-Free** - No milk or dairy products
 - **Nut-Free** - No nuts (for nut allergies)
 - **Spicy-Free** - Mild/non-spicy preparation
+
+![alt text](image-3.png)
 
 ### How Customers Use This Feature
 1. Add items to cart and click the **Cart icon** at the navbar bar 🍴
