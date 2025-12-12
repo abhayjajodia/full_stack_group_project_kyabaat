@@ -44,7 +44,7 @@
                                             {% if item['dietary_restrictions'] and item['dietary_restrictions']|length > 0 %}
                                               <div class="dietary-badges small mt-1">
                                                 {% for restriction in item['dietary_restrictions'] %}
-                                                  <span class="badge bg-info">{{ restriction|capitalize }}</span>
+                                                  <span class="badge bg-info m-1 mt-2">{{ restriction|capitalize }}</span>
                                                 {% endfor %}
                                               </div>
                                             {% endif %}
