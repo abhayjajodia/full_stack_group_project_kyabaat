@@ -1,4 +1,6 @@
-# Kyabaat - Local Setup (Beginner Friendly)
+# Kyabaat
+
+
 
 # Here is the full demo of our website
 🌐 [**Kyabaat**](https://kyabaat.onrender.com/)
