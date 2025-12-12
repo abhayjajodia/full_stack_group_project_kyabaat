@@ -5,7 +5,10 @@
 # Here is the full demo of our website
 🌐 [**Kyabaat**](https://kyabaat.onrender.com/)
 
-This is a small Flask app that uses MongoDB (PyMongo).
+Kyabaat is an ordering app that brings a fresh, Indian touch to the world of digital
+convenience. The name ‘Kyabaat’ () is a Hindi expression of delight, often used to
+appreciate something wonderful or impressive. The brand reflects the spirit of
+simplicity, joy, and satisfaction that comes with easy ordering and reliable service.
 
 ## 👨🏻‍👩🏻‍👦🏻‍👦🏻 Team Members
 
