@@ -172,6 +172,22 @@ def update_cart():
     return redirect(url_for('cart_page'))
 
 
+@app.route('/cart/update-dietary', methods=['POST'])
+def update_cart_dietary():
+    db_id = request.form.get('db_id') or (request.get_json(silent=True) or {}).get('db_id')
+    dietary_restrictions = request.form.getlist('dietary') or (request.get_json(silent=True) or {}).get('dietary') or []
+    
+    if not db_id:
+        return redirect(url_for('cart_page'))
+    
+    cart = session.get('cart', {})
+    if db_id in cart:
+        cart[db_id]['dietary_restrictions'] = dietary_restrictions
+        session['cart'] = cart
+    
+    return redirect(url_for('cart_page'))
+
+
 # ----- Checkout / Order -----
 @app.route('/checkout', methods=['GET'])
 def checkout():
@@ -213,8 +229,8 @@ def process_checkout():
         subtotal = price * qty
         total += subtotal
         
-        # Get dietary restrictions selected for this item by customer
-        dietary_restrictions = request.form.getlist(f'dietary_{db_id}')
+        # Get dietary restrictions from cart entry
+        dietary_restrictions = entry.get('dietary_restrictions', [])
         
         items.append({
             'db_id': db_id,

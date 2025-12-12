@@ -9,7 +9,7 @@ This is a small Flask app that uses MongoDB (PyMongo).
 
 - Abhay Jajodia
 - Nirmala Adhikari
-- Misra Parvin
+- Misra Parvin Shaikh
 - Paras Soni
 - Pabisa Sapkota
 
@@ -123,10 +123,10 @@ Customers can specify their dietary preferences during checkout. This helps ensu
 - **Spicy-Free** - Mild/non-spicy preparation
 
 ### How Customers Use This Feature
-1. Add items to cart and proceed to **Checkout**
-2. In the checkout page, select dietary preferences for each item (optional)
+1. Add items to cart and click the **Cart icon** at the navbar bar 🍴
+2. In the cart page, there is a option **Edit dietary**
 3. Check relevant dietary restriction boxes for each food item
-4. Complete billing information and place order
+4. And can proceed to Billling forms
 5. Dietary preferences are saved with the order in **Order History**
 
 ### Where Dietary Information is Stored
